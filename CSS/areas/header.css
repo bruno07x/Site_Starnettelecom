@@ -3,16 +3,11 @@
 /* ELEMENT = .block-element */
 /* MODIFIER = .block-element--modifier */
 /* +++++++++++++++ GERAL +++++++++++++++++++ */
-a{
-    color: #fff;
-    font-size: 1.3em;
-    font-family: sans-serif;
-}
+
 /* +++++++++++++++ BLOCK +++++++++++++++++++ */
 .siteStar_header{
     background: linear-gradient(to right bottom, #555, #222);
     padding: 10px;
-    
 }
 /* +++++++++++++++ ELEMENT +++++++++++++++++++ */
 .siteStar_header_left-icon{
