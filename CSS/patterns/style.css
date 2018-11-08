@@ -1,0 +1,6 @@
+/* NOTE: Typograph */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+/* Fonte usada com suas variacoes de 300, 400 e 700 Weight */
+.montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
