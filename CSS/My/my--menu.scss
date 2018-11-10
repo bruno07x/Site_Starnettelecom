@@ -1,0 +1,61 @@
+// NOTE: Efeitos do menu hamburguer
+.my--height{
+    height: 80px;
+}
+.my--height2{
+    height: 8px;
+}
+.my--width{
+    width: 80px;
+}
+.my--transform{
+    transform: translate(-50%, -50%);
+}
+.my--transition{
+    transition: .5s;
+}
+.my--shadow{
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.20);
+}
+.my--top{
+    top: 50%;
+}
+.my--left{
+    left: -50%;
+}
+.my--menu span{
+    display: block;
+    width: 50%;
+    height: 5%;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    transition: .5s;
+    box-shadow: 0 2px 2px rgba($color: #000000, $alpha: .20);
+}
+.my--menu span:nth-child(1){
+    transform: translate(-50%, -50%) translateY(-20px);
+    transition: .5s;
+}
+.my--menu span:nth-child(4){
+    transform: translate(-50%, -50%) translateY(20px);
+    transition: .5s;
+}
+.my--menu.active span:nth-child(1){
+    transform: translate(-50%, -50%) translateY(-35px);
+    opacity: 0;
+}
+.my--menu.active span:nth-child(4){
+    transform: translate(-50%, -50%) translateY(35px);
+    opacity: 0;
+}
+.my--menu.active span:nth-child(2){
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition-delay: .5s;
+}
+.my--menu.active span:nth-child(3){
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition-delay: .5s;
+}
