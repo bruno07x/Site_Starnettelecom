@@ -1,61 +1,92 @@
 // NOTE: Efeitos do menu hamburguer
-.my--height{
-    height: 80px;
-}
-.my--height2{
-    height: 8px;
-}
-.my--width{
-    width: 80px;
-}
-.my--transform{
-    transform: translate(-50%, -50%);
-}
-.my--transition{
-    transition: .5s;
-}
-.my--shadow{
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.20);
-}
-.my--top{
-    top: 50%;
-}
-.my--left{
-    left: -50%;
-}
-.my--menu span{
-    display: block;
-    width: 50%;
-    height: 5%;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #ffffff;
-    transition: .5s;
-    box-shadow: 0 2px 2px rgba($color: #000000, $alpha: .20);
-}
-.my--menu span:nth-child(1){
-    transform: translate(-50%, -50%) translateY(-20px);
-    transition: .5s;
-}
-.my--menu span:nth-child(4){
-    transform: translate(-50%, -50%) translateY(20px);
-    transition: .5s;
-}
-.my--menu.active span:nth-child(1){
-    transform: translate(-50%, -50%) translateY(-35px);
-    opacity: 0;
-}
-.my--menu.active span:nth-child(4){
-    transform: translate(-50%, -50%) translateY(35px);
-    opacity: 0;
-}
-.my--menu.active span:nth-child(2){
-    transform: translate(-50%, -50%) rotate(45deg);
-    transition-delay: .5s;
-}
-.my--menu.active span:nth-child(3){
-    transform: translate(-50%, -50%) rotate(-45deg);
-    transition-delay: .5s;
-}
+@import 'my--variable.scss';
+.container {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .stick {
+    width: $larguraMenu;
+    height: 5px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background-color:  #2DFDB9;
+    display: inline-block;
+  }
+  
+  .stick:last-child {
+    margin-bottom: 0px;
+  }
+  
+  .stick-1.open {
+    animation: stick-1-open .6s ease-out forwards;
+  }
+  
+  .stick-2.open {
+    animation: stick-2-open .6s linear forwards;
+  }
+  
+  .stick-3.open {
+    animation: stick-3-open .6s linear forwards;
+  }
+  
+  @keyframes stick-1-open {
+    0%   {width: $larguraMenu;}
+    40%  {background-color: #ff1456; width: 8px; transform: translate(40px, 0px);}
+    75%, 80%  {width: 8px; transform: translate(40px, -50px); animation-timing-function: cubic-bezier(0,1,1,1);}
+    100% {background-color: #ff1456; width: 8px; transform: translate(23px, 33px); opacity: 0;}
+  }
+  
+  @keyframes stick-2-open {
+    80%  {background-color: #2DFDB9; transform: translate(0px, 0px) rotate(0deg);}
+    100% {background-color: #ff1456; transform: translate(5px, -3px) rotate(40deg);}
+  }
+  
+  @keyframes stick-3-open {
+    80%  {background-color: #2DFDB9; transform: translate(0px, 0px) rotate(0deg);}
+    100% {background-color: #ff1456; transform: translate(5px, -23px) rotate(-40deg);}
+  }
+  
+  .stick-1.close {
+    width: 8px; 
+    transform: translate(27px, 26px);
+    animation: stick-1-close .6s ease-out forwards;
+  }
+  
+  .stick-2.close {
+    transform: translate(0px, 0px) rotate(40deg);
+    animation: stick-2-close .6s ease-out forwards;
+  }
+  
+  .stick-3.close {
+    transform: translate(0px, -23px) rotate(-40deg);
+    animation: stick-3-close .6s ease-out forwards;
+  }
+  
+  @keyframes stick-1-close {
+    0%, 70% {width: 0px;}
+    100%    {width: $larguraMenu; transform: translate(0, 0);}
+  }
+  
+  @keyframes stick-2-close {
+    0%   {background-color: #ff1456; width: $larguraMenu;}
+    20%  {background-color: #ff1456; width: 8px; transform: translate(0, 0px) rotate(40deg);}
+    40%  {background-color: #2DFDB9; width: 0px;}
+    65%  {transform: translate(0, -70px); animation-timing-function: cubic-bezier(0,1,1,1);}
+    80%  {width: 0px;}
+    100% {width: $larguraMenu; transform: translate(0, 0px);}
+  }
+  
+  @keyframes stick-3-close {
+    0%   {background-color: #ff1456; width: $larguraMenu;}
+    20%  {background-color: #ff1456; width: 8px; transform: translate(0, -23px) rotate(-40deg);}
+    40%  {background-color: #2DFDB9;}
+    65%  {transform: translate(0, -93px); animation-timing-function: cubic-bezier(0,1,1,1);}
+    90%  {width: 8px;}
+    100% {width: $larguraMenu; transform: translate(0, 0px);}
+  }
